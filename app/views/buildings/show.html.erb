@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="card card-custom gutter-b">
+        <div class="card-header">
+            <div class="card-title">
+                <h1>DETALLE EDIFICIO</h1>
+            </div>
+        </div>        
+    </div>
+
+    <div class="card-body">
+
+        <div>
+            <strong>ID Edificio:</strong>
+            <%= @building.id %>
+        </div>
+
+        <br>  
+
+        <div>
+            <strong>Nombre Edificio:</strong>
+            <%= @building.nombre_edificio %>
+        </div>
+
+        <br>  
+
+        <div>
+            <strong>Direccion:</strong>
+            <%= @building.direccion %>
+        </div>   
+
+        <br>  
+
+        <div>
+            <strong>Ciudad:</strong>
+            <%= @building.ciudad %>
+        </div>      
+
+        <br>     
+     
+        <% @apartments = Apartment.where(building_id: @building.id) %>
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                Departamentos del Edificio
+            </div>
+            <ul class="list-group list-group-flush">
+                <% @apartments.each do |a| %>
+                   <li class="list-group-item"><%= a.numero_departamento %></li>                    
+                <% end %>
+            </ul>
+        </div>
+
+        <br>
+
+        <td><%= link_to "Regresar", edificios_url, class: "btn btn-secondary" %></td>
+
+    </div>
+        
+</div>

@@ -1,0 +1,25 @@
+<%= form_with(model:apartment, local: true) do |form| %>
+    <div class="row">
+        <%= form.label :numero_departamento, "Numero de Departamento" %>
+        <div class="col-3">
+            <%= form.number_field :numero_departamento, class: "form-control" %>
+        </div>
+    </div>
+
+    <br>
+
+     <div class="row">
+        <%= form.label :building_id, "Edificio" %>
+        <div class="col-3">
+            <%= form.collection_select :building_id, Building.order(:nombre_edificio), :id, :nombre_edificio, include_blank: "Elige un edificio", class: "form-control" %> 
+        </div>
+    </div>
+
+     <br>
+     
+     <div class="actions">
+        <%= form.submit "Guardar", class: "btn btn-success" %>
+        <%= link_to 'Regresar', departamentos_url, class: "btn btn-secondary" %>        
+    </div>
+
+<% end %>

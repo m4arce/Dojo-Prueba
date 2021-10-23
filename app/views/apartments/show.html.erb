@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="card card-custom gutter-b">
+        <div class="card-header">
+            <div class="card-title">
+                <h1>DETALLE DEPARTAMENTO</h1>
+            </div>
+        </div>        
+    </div>
+
+    <div class="card-body">
+        <div>
+            <strong>ID Departamento:</strong>
+            <%= @apartment.id %>
+        </div>
+
+        <br>  
+
+        <div>
+            <strong>Numero Departamento:</strong>
+            <%= @apartment.numero_departamento %>
+        </div>
+
+        <br>  
+
+        <div>
+            <strong>ID Edificio:</strong>
+            <%= @apartment.building_id %>
+        </div>  
+
+        <br>         
+
+        <div>
+            <strong>Nombre Edificio:</strong>
+            <%= @apartment.building.nombre_edificio %>
+        </div>         
+
+        <br>        
+
+        <td><%= link_to "Regresar", departamentos_url, class: "btn btn-secondary" %></td>
+
+    </div>
+
+</div>
